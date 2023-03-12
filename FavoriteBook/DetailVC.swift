@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct DetailVC: View {
+    var choosenFavoriteElement : FavoriteElements
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Image(choosenFavoriteElement.imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            Text(choosenFavoriteElement.name)
+                .font(.largeTitle)
+                .padding()
+            Text(choosenFavoriteElement.description)
+        }
     }
 }
 
 struct DetailVC_Previews: PreviewProvider {
     static var previews: some View {
-        DetailVC()
+        DetailVC(choosenFavoriteElement: german)
     }
 }
